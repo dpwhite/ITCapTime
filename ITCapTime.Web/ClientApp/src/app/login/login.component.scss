@@ -1,0 +1,33 @@
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+.login-field {
+  width: 100%;
+}
+
+.forget-password {
+  //margin-top: var.$space-sm;
+}
+
+.buttons {
+  //margin-top: var.$space-sm;
+}
+
+.test-user-list {
+  font-size: 10px;
+}
+
+.shift-right {
+  right: 1.15rem;
+}

@@ -1,0 +1,56 @@
+  <mat-card-title>
+    Project Details
+  </mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="projectForm" (ngSubmit)="onSave()" class="exmaple-full-width">
+      <div>
+        <mat-form-field class="w-50">
+          <mat-label>Project Name</mat-label>
+          <input matInput formControlName="projectName" [value]="project.name" />
+        </mat-form-field>
+        <mat-form-field class="w-50">
+          <mat-label>Project Type</mat-label>
+          <mat-select formControlName="projectType" [value]="project.projectType">
+            <mat-option [value]="1">Capital</mat-option>
+            <mat-option [value]="2">Expense</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="w-25">
+          <mat-label>Start Date</mat-label>
+          <input matInput [matDatepicker]="startDate" [value]="project.startDate">
+          <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+          <mat-datepicker #startDate></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="w-25">
+          <mat-label>End Date</mat-label>
+          <input matInput [matDatepicker]="endDate">
+          <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+          <mat-datepicker #endDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field  class="w-100" appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description" [value]="project.description"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="col-md-12" style="">
+          <button id="cancel"
+                  value="Cancel"
+                   mat-raised-button color="warn"
+                  (click)="cancel()">
+            Cancel
+          </button>
+          <button id="submit"
+                  value="Submit"
+                   mat-raised-button color="primary"
+                  type="submit">
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
+
+<p>Form Value: {{projectForm.value | json}}</p>

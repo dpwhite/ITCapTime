@@ -1,0 +1,37 @@
+<ng-container>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Member</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.close('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="employee-form main" [formGroup]="employeeForm" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+      <div class="row">
+        <div class="col-md-3">
+          <label>First Name</label>
+          <input matInput type="text" formControlName="firstName" />
+        </div>
+        <div class="col-md-3">
+          <label>Last Name</label>
+          <input matInput type="text" formControlName="lastName" />
+        </div>
+        <div class="col-md-3">
+          <label>Title</label>
+          <input matInput type="text" formControlName="title" />
+        </div>
+        <div class="col-md-3">
+          <label>Email</label>
+          <input matInput type="text" formControlName="email" />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <div>
+      <button *ngIf="isNewEmployee" mat-raised-button type="button" color="primary" (click)="addNewEmployee()">Add</button>
+      <button *ngIf="!isNewEmployee" mat-raised-button type="submit" color="primary">Ok</button>
+      <button mat-raised-button type="button" color="accent">Cancel</button>
+    </div>
+  </div>
+</ng-container>
