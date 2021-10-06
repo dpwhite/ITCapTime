@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AgileObjects.AgileMapper" Version="1.8.0" />
+    <PackageReference Include="Automapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.8" />
+    <PackageReference Include="Newtonsoft.json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ITCapTime.Data\ITCapTime.Data.csproj" />
+    <ProjectReference Include="..\ITCapTime.Domain\ITCapTime.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
